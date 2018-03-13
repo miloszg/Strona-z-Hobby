@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:annotation>
+    <xs:documentation xml:lang="pl">
+    </xs:documentation>
+  </xs:annotation>  
+ 
+  <xs:element name="kinomania" type="kinomania_typ"/>
+
+  <xs:element name="imie" type="imie_typ"/>
+  <xs:element name="nazwisko" type="xs:string"/>
+  <xs:element name="opis" type="xs:string"/>
+
+  <xs:attribute name="kraj" type="xs:string"/>
+  
+  <xs:complexType name="kinomania_typ">
+    <xs:all>
+      <xs:element name="kino" type="kino_typ"/>
+      <xs:element name="filmy" type="film_typ"/>
+      <xs:element name="strony" type="strony_typ"/>
+      <xs:element name="stopka" type="stopka_typ"/>
+      <xs:element name="festiwale" type="festiwal_typ"/>
+      <xs:element name="muzyka" type="muzyka_typ"/>
+      <xs:element name="ankieta" type="ankieta_typ"/>
+    </xs:all>
+    <xs:attribute name="hobby" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="kino_typ">
+    <xs:sequence>
+      <xs:element ref="opis"/>
+      <xs:element name="ogladanie" type="ogladanie_typ"/>
+      <xs:element name="gatunki" type="gatunek_typ"/>
+      <xs:element name="ekran">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="opis"/>
+          </xs:sequence>
+          <xs:attribute name="typ" type="typ_ekranu"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ogladanie_typ">
+    <xs:sequence>
+      <xs:element name="sposoby" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="gatunek_typ">
+    <xs:sequence>
+      <xs:element name="opis" type="xs:string"/>
+      <xs:element name="filmowe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="gatunki_filmowe" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="serialowe">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="gatunki_serialowe" type="xs:string" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="film_typ">
+    <xs:sequence>
+      <xs:element name="film" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:group ref="film"/>
+          <xs:attribute ref="kraj"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="strony_typ">
+    <xs:sequence>
+      <xs:element name="strona" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nazwa" type="xs:string"/>
+            <xs:element name="link" type="xs:string"/>
+          </xs:sequence>
+          <xs:attribute ref="kraj"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="stopka_typ">
+    <xs:sequence>
+      <xs:element ref="imie"/>
+      <xs:element ref="nazwisko"/>
+      <xs:element name="rok" type="xs:integer"/>
+    </xs:sequence>
+    <xs:attribute name="html" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="festiwal_typ">
+    <xs:sequence>
+      <xs:element name="festiwal" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nazwa_festiwalu" type="xs:string"/>
+            <xs:element name="organizator" type="xs:string"/>
+            <xs:element name="miejsce" type="xs:string"/>
+            <xs:element name="poczatek_imprezy" type="xs:date"/>
+            <xs:element name="koniec_imprezy" type="xs:date"/>
+          </xs:sequence>
+          <xs:attribute ref="kraj"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="muzyka_typ">
+    <xs:sequence>
+      <xs:element name="soundtrack" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="nazwa_filmu" type="xs:string"/>
+            <xs:element name="wykonawca" type="xs:string"/>
+            <xs:element name="link" type="link_typ"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ankieta_typ">
+    <xs:sequence>
+      <xs:element ref="imie"/>
+      <xs:element ref="nazwisko"/>
+      <xs:element name="plec" type="plec_typ"/>
+      <xs:element name="wiek" type="wiek_typ"/>
+      <xs:element name="kraj_pochodzenia" type="kraj_pochodzenia_typ"/>
+      <xs:element name="ocena_zawartosci">
+        <xs:simpleType>
+          <xs:list itemType="xs:integer"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ulubione">
+        <xs:simpleType>
+          <xs:union memberTypes="ocena_slownie pozytywna" />
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="pochodzenie" type="kraj_pochodzenia_typ"/>
+  </xs:complexType>
+  
+  <xs:complexType name="nagroda">
+    <xs:complexContent>
+      <xs:extension base="film_typ">
+        <xs:sequence>
+          <xs:element name="nagroda" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="pozytywna">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:maxInclusive value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ocena_slownie">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="celujacy"/>
+      <xs:enumeration value="bardzo dobry"/>
+      <xs:enumeration value="dobry"/>
+      <xs:enumeration value="dopuszczajacy"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="plakat_typ">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(.)+\.(jpg)"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="link_typ">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="https://.+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="plec_typ">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="mezczyzna|kobieta"/>
+    </xs:restriction>              
+  </xs:simpleType>
+
+  <xs:simpleType name="wiek_typ">
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="0"/>
+      <xs:maxExclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="imie_typ">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="kraj_pochodzenia_typ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Polska"/>
+      <xs:enumeration value="Rosja"/>
+      <xs:enumeration value="Ameryka Polnocna"/>
+      <xs:enumeration value="Bulgaria"/>
+      <xs:enumeration value="Wielka Brytania"/>
+      <xs:enumeration value="Grecja"/>
+      <xs:enumeration value="Hiszpania"/>
+      <xs:enumeration value="Ukraina"/>
+      <xs:enumeration value="Lotwa"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:group name="film">
+    <xs:sequence>
+      <xs:element name="tytul" type="xs:string"/>
+      <xs:element name="rezyser" type="xs:string"/>
+      <xs:element name="kraj_pochodzenia" type="xs:string"/>
+      <xs:element ref="opis"/>
+      <xs:element name="plakat" type="plakat_typ"/>
+    </xs:sequence>
+  </xs:group>
+  
+  <xs:simpleType name="typ_ekranu">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ekran_projekcyjny"/>
+      <xs:enumeration value="telewizor"/>
+      <xs:enumeration value="monitor"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

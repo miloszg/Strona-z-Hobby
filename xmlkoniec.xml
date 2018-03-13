@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="filmoteka.xsl"?>
+
+<kinomania hobby="tak">
+<kino>
+    <opis>kinomania-zamilowanie do ogladania filmow i seriali</opis>
+    <ogladanie>
+      <sposoby>Kino komercyjnym</sposoby>
+      <sposoby>Kino studyjnym</sposoby>
+      <sposoby>Kino domowe </sposoby>
+      <sposoby>Kino "pod chmurka"</sposoby>
+      <sposoby>Online</sposoby>
+    </ogladanie>
+    <gatunki>
+      <opis>Filmy i seriale dzielo sie na wiele gatunkow, oto sa niektore z nich</opis>
+      <filmowe>
+        <gatunki_filmowe>Film Fabularny</gatunki_filmowe>
+        <gatunki_filmowe>Film Akcji</gatunki_filmowe>
+        <gatunki_filmowe>Dokument</gatunki_filmowe>
+        <gatunki_filmowe>Film Przygodowy</gatunki_filmowe>
+        <gatunki_filmowe>Horror</gatunki_filmowe>
+        <gatunki_filmowe>Film Animowany</gatunki_filmowe>
+        <gatunki_filmowe>Western</gatunki_filmowe>
+        <gatunki_filmowe>Thriller</gatunki_filmowe>
+        <gatunki_filmowe>Parodia</gatunki_filmowe>
+        <gatunki_filmowe>Sci/fi</gatunki_filmowe>
+      </filmowe>
+      <serialowe>
+        <gatunki_serialowe>Serial Fabularny</gatunki_serialowe>
+        <gatunki_serialowe>Serial Animowany</gatunki_serialowe>
+        <gatunki_serialowe>Serial Dokumentalny</gatunki_serialowe>
+        <gatunki_serialowe>Serial Fantasy</gatunki_serialowe>
+        <gatunki_serialowe>Serial Sci/fi</gatunki_serialowe>
+        <gatunki_serialowe>Serial Obyczajowy</gatunki_serialowe>
+      </serialowe>
+    </gatunki>
+    <ekran typ="ekran_projekcyjny">
+      <opis>odpowiedni ekran jest znaczacym czynnikiem wplywajacym na przeycia widza w trakcie ogladanie filmu/serialu</opis>
+    </ekran>
+</kino>
+<filmy>
+  <film kraj="USA">
+    <tytul>Whiplash</tytul>
+    <rezyser>Damien Chazelle</rezyser>
+    <kraj_pochodzenia>USA</kraj_pochodzenia>
+    <opis>
+      Mlody i ambitny perkusista za wszelka cene pragnie dolaczyc do czolowki najwybitniejszych artystow muzyki jazzowej.
+    </opis>
+    <plakat>whiplash.jpg</plakat>
+  </film>
+  <film kraj="USA">
+    <tytul>2001: Odyseja kosmiczna</tytul>
+    <rezyser>Stanley Kubrick</rezyser>
+    <kraj_pochodzenia>USA</kraj_pochodzenia>
+    <opis>
+      Film dzieli sie na trzy epizody, ktorych akcja ma miejsce w roznych okresach historycznych i zakatkach wszechswiata. 
+    </opis>
+    <plakat>odyseja.jpg</plakat>
+  </film>
+  <film kraj="USA">
+    <tytul>American Psycho</tytul>
+    <rezyser>Mary Harron</rezyser>
+    <kraj_pochodzenia>USA</kraj_pochodzenia>
+    <opis>
+      Adaptacja powiesci Breta Eastona Ellisa. Patrick Bateman to typowy amerykanski yuppie, ktory zaczyna mordowac ludzi, chcac oderwac sie od rutyny.
+    </opis>
+    <plakat>psycho.jpg</plakat>
+  </film>
+    <film kraj="USA">
+    <tytul>Pulp Fiction</tytul>
+    <rezyser>Quentin Tarantino</rezyser>
+    <kraj_pochodzenia>USA</kraj_pochodzenia>
+    <opis>
+      Przemoc i odkupienie w opowiesci o dwoch platnych mordercach pracujacych na zlecenie mafii, zonie gangstera, bokserze i parze okradajacej ludzi w restauracji.
+    </opis>
+    <plakat>pulp.jpg</plakat>
+  </film>
+    <film kraj="USA">
+    <tytul>Interstellar</tytul>
+    <rezyser>	Christopher Nolan</rezyser>
+    <kraj_pochodzenia>USA</kraj_pochodzenia>
+    <opis>
+      Byt ludzkosci na Ziemi dobiega konca wskutek zmian klimatycznych. Grupa naukowcow odkrywa tunel czasoprzestrzenny, ktory umozliwia poszukiwanie nowego domu.
+    </opis>
+    <plakat>interstellar.jpg</plakat>
+  </film>
+</filmy>
+<strony>
+    <strona kraj="USA">
+      <nazwa>IMBD</nazwa>
+      <link>http://www.imdb.com</link>
+    </strona>
+    <strona kraj="Polska">
+      <nazwa>Filmweb</nazwa>
+      <link>http://www.filmweb.pl</link>
+    </strona>
+    <strona kraj="USA">
+      <nazwa>RottenTomatoes</nazwa>
+      <link>https://www.rottentomatoes.com</link>
+    </strona>
+    <strona kraj="USA">
+      <nazwa>Metacritic</nazwa>
+      <link>http://www.metacritic.com/movie</link>
+    </strona>
+</strony>
+<stopka html="zawiera">
+  <imie>Milosz</imie>
+  <nazwisko>Gustawski</nazwisko>
+  <rok>2016</rok>
+</stopka>
+<festiwale>
+    <festiwal kraj="Polska">
+      <nazwa_festiwalu>Festiwal Filmowy w Gdyni</nazwa_festiwalu>
+      <organizator>Polski Instytut Sztuki Filmowej</organizator>
+      <miejsce>Gdynia</miejsce>
+      <poczatek_imprezy>2016-09-18</poczatek_imprezy>
+      <koniec_imprezy>2016-09-23</koniec_imprezy>
+    </festiwal>
+    <festiwal kraj="Polska">
+      <nazwa_festiwalu>Gdansk DOCFILM festival</nazwa_festiwalu>
+      <organizator>gdanskDOCfilm</organizator>
+      <miejsce>Gdansk</miejsce>
+      <poczatek_imprezy>2016-05-31</poczatek_imprezy>
+      <koniec_imprezy>2016-03-03</koniec_imprezy>
+    </festiwal>
+    <festiwal kraj="Polska">
+      <nazwa_festiwalu>Krakowski Festiwal Filmowy</nazwa_festiwalu>
+      <organizator>Krakowska Fundacja Filmowa</organizator>
+      <miejsce>Krakow</miejsce>
+      <poczatek_imprezy>2016-05-28</poczatek_imprezy>
+      <koniec_imprezy>2016-06-06</koniec_imprezy>
+    </festiwal>
+    <festiwal kraj="USA">
+      <nazwa_festiwalu>Sundance Film Festival</nazwa_festiwalu>
+      <organizator>Sundance Institute</organizator>
+      <miejsce>Utah</miejsce>
+      <poczatek_imprezy>2016-01-19</poczatek_imprezy>
+      <koniec_imprezy>2016-01-29</koniec_imprezy>
+    </festiwal>
+    <festiwal kraj="Polska">
+      <nazwa_festiwalu>American Film Festival</nazwa_festiwalu>
+      <organizator>Stowarzyszenie Nowe Horyzonty</organizator>
+      <miejsce>Wroclaw</miejsce>
+      <poczatek_imprezy>2016-10-25</poczatek_imprezy>
+      <koniec_imprezy>2017-10-30</koniec_imprezy>
+    </festiwal>
+</festiwale>
+<muzyka>
+  <soundtrack>
+    <nazwa_filmu>Fight Club</nazwa_filmu>
+    <wykonawca>Pixies</wykonawca>
+    <link>https://www.youtube.com/watch?v=yFAnn2j4iB0</link>
+  </soundtrack>       
+  <soundtrack>
+    <nazwa_filmu>Whiplash</nazwa_filmu>
+    <wykonawca>Hank Levy</wykonawca>
+    <link>https://www.youtube.com/watch?v=v0RqJaA0xQU</link>
+  </soundtrack> 
+      <soundtrack>
+    <nazwa_filmu>Saga Star Wars</nazwa_filmu>
+    <wykonawca>John Williams</wykonawca>
+    <link>https://www.youtube.com/watch?v=_D0ZQPqeJkk</link>
+  </soundtrack> 
+</muzyka>
+<ankieta pochodzenie="Polska">
+    <imie>Milosz</imie>
+    <nazwisko>Gustawski</nazwisko>
+    <plec>mezczyzna</plec>
+    <wiek>19</wiek>
+    <kraj_pochodzenia>Polska</kraj_pochodzenia>
+  <ocena_zawartosci>
+    1
+    2
+    3
+    4
+    5
+    6
+  </ocena_zawartosci>
+  <ulubione>5</ulubione>
+</ankieta>
+</kinomania>
